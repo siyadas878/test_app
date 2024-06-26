@@ -25,12 +25,18 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     repo.getAllEmployees();
-    if (connectivityResult == ConnectivityResult.none) {
-      customSnackBar(
-          title: 'Bad Connection', message: 'Internet Connection Failed');
-    }
+    checkConnectivity();
     locationPermission();
     super.initState();
+  }
+
+  checkConnectivity() async {
+    var connectivityResult = await Connectivity().checkConnectivity();
+    if (connectivityResult == ConnectivityResult.none) {
+      print('Connected');
+    }
+    customSnackBar(
+        title: 'Bad Connection', message: 'Internet Connection Failed');
   }
 
   locationPermission() async {

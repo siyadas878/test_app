@@ -20,13 +20,13 @@ class EmployeeRepo {
         await box.clear();
         await box.addAll(employeeList);
       } else {
-        customSnackBar(title: 'Error', message: 'Somthing went wrong');
+        // customSnackBar(title: 'Error', message: 'Somthing went wrong');
         if (kDebugMode) {
           print('Error ------------${response.body}');
         }
       }
     } catch (e) {
-      customSnackBar(title: 'Error', message: 'Somthing went wrong');
+      // customSnackBar(title: 'Error', message: 'Somthing went wrong');
       log(e.toString());
     }
   }
