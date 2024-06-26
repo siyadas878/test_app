@@ -34,11 +34,11 @@ class DetailsScreen extends StatelessWidget {
             ),
             appSpaces.spaceForHeight10,
             DetailTile(
-              icon: Icons.location_on,
+              icon: Icons.email,
               title: employee.email ?? '',
             ),
             DetailTile(
-              icon: Icons.email,
+              icon: Icons.location_on,
               title: employee.address!.street ?? '',
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

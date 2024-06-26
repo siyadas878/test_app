@@ -5,6 +5,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:test_app/core/cubit/employee_cubit/employee_cubit.dart';
+import 'package:test_app/core/cubit/search_cubit/search_cubit.dart';
 import 'package:test_app/core/models/employee_model.dart';
 import 'package:test_app/core/repository/employee_repo.dart';
 import 'package:test_app/manager/color_manager.dart';
@@ -38,6 +39,10 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) =>
                 EmployeeCubit(employeeRepo: context.read<EmployeeRepo>()),
+          ),
+          BlocProvider(
+            create: (context) =>
+                SearchCubit(employeeRepo: context.read<EmployeeRepo>()),
           ),
         ],
         child: GetMaterialApp(
