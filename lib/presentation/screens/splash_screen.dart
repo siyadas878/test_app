@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -33,10 +35,9 @@ class _SplashScreenState extends State<SplashScreen> {
   checkConnectivity() async {
     var connectivityResult = await Connectivity().checkConnectivity();
     if (connectivityResult == ConnectivityResult.none) {
-      print('Connected');
+      customSnackBar(
+          title: 'Bad Connection', message: 'Internet Connection Failed');
     }
-    customSnackBar(
-        title: 'Bad Connection', message: 'Internet Connection Failed');
   }
 
   locationPermission() async {
